@@ -82,7 +82,7 @@ const Shop = () => {
                 {jersey.name}
               </div>
               <div className="mt-2 text-sm mb-4">₹{jersey.price}</div>
-              <button className="bg-primary text-white flex items-center justify-center font-bold p-4 text-sm hover:bg-blue-800 mb-4" >BUY NOW </button>
+              <button className="bg-primary text-white flex items-center justify-center font-bold p-4 text-sm hover:bg-blue-800 mb-4" >VIEW PRODUCT </button>
               <div className="text-sm font-medium text-primary flex justify-between w-full">
                 <div>PRODUCT</div>
                 <div className="text-zinc-600 font-bold">

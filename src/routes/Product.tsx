@@ -134,11 +134,12 @@ const Product = () => {
         </div>
         {/* Add to Cart */}
         <button
-          onClick={addToCart}
-          className="bg-primary text-white px-6 py-3 font-semibold text-lg"
+          // onClick={addToCart}
+          disabled
+          className="bg-zinc-600 text-white px-6 py-3 font-semibold text-lg"
           style={{ borderRadius: 0 }}
         >
-          Add to Cart
+          COMING SOON
         </button>
       </div>
     </div>
