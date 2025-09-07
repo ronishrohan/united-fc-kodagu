@@ -46,7 +46,7 @@ const LatestVideos = () => {
         <div className="text-primary font-bold text-2xl sm:text-3xl md:text-4xl flex items-center gap-4 text-center">
           Latest Videos <ArrowRight className="translate-y-1" size={32} />
         </div>
-        <button  onClick={() => navigate("/videos")} className="px-4 py-2 h-full hover:bg-primary hover:text-white border border-primary text-primary duration-75 font-bold" >MORE</button>
+        <Link  to="/videos" className="px-4 py-2 h-full hover:bg-primary hover:text-white border border-primary text-primary duration-75 font-bold" >MORE</Link>
       </div>
       <div className="h-fit lg:min-h-[300px] md:min-h-[400px] w-full grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 items-stretch place-items-stretch">
         {loading ? (

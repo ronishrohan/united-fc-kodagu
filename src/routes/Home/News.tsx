@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Image from "../../assets/images/image40.jpeg";
 import { supabase } from "../../lib/supabase";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const News = () => {
   const [newsItems, setNewsItems] = useState<any[]>([]);
@@ -24,12 +24,17 @@ const News = () => {
     console.log("News items fetched successfully");
   }, []);
 
+  const navigate = useNavigate()
+
   return (
     <div id="latest" className="h-fit px-[5vw] py-12 flex flex-col ">
       <div className="w-full flex justify-between mb-8">
-        <div className="text-primary font-bold text-4xl flex items-center gap-4 text-center">
-          Latest news{" "}
-          <ArrowRight className="translate-y-1" size={40}></ArrowRight>
+        <div className="flex justify-between w-full">
+          <div className="text-primary font-bold text-4xl flex items-center gap-4 text-center">
+            Latest news{" "}
+            <ArrowRight className="translate-y-1" size={40}></ArrowRight>
+          </div>
+          <Link to="/news" className="px-4 py-2 h-full hover:bg-primary hover:text-white border border-primary text-primary duration-75 font-bold" >MORE</Link>
         </div>
       </div>
       <div className="h-fit items-stretch lg:min-h-[300px] md:min-h-[400px] w-full grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12">
@@ -68,7 +73,6 @@ const News = () => {
                   })}
                 </span>
               </div>
-             
             </Link>
           ))
         )}

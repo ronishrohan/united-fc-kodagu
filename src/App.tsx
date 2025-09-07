@@ -25,6 +25,7 @@ import SignIn from "./routes/SignIn";
 import Videos from "./routes/Videos";
 import About from "./routes/Home/About";
 import Gallery from "./routes/Gallery";
+import PrivacyPolicy from "./routes/PrivacyPolicy";
 
 function App() {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -66,6 +67,7 @@ function App() {
               </div>
               <Navbar></Navbar>
               <Routes>
+                <Route  path="/terms-of-service" element={<PrivacyPolicy />}/>
                 <Route path="/gallery" element={<Gallery  />} />
                 <Route path="about" element={<About />} />
                 <Route path="/cart" element={<Cart />} />
