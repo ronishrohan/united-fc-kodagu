@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import Image1 from "../../assets/images/image24.jpeg";
+import Image1 from "../../assets/images/journey-2.jpg";
 import Image2 from "../../assets/images/image40.jpeg";
 
 const Journey = () => {

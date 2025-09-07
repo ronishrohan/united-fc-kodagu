@@ -30,10 +30,10 @@ const News = () => {
     <div id="latest" className="h-fit px-[5vw] py-12 flex flex-col ">
       <div className="w-full flex justify-between mb-8">
         <div className="flex justify-between w-full">
-          <div className="text-primary font-bold text-4xl flex items-center gap-4 text-center">
+          <Link to="/news"  className="text-primary font-bold text-4xl flex items-center gap-4 text-center">
             Latest news{" "}
             <ArrowRight className="translate-y-1" size={40}></ArrowRight>
-          </div>
+          </Link>
           <Link to="/news" className="px-4 py-2 h-full hover:bg-primary hover:text-white border border-primary text-primary duration-75 font-bold" >MORE</Link>
         </div>
       </div>

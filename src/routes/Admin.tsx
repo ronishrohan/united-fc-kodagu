@@ -269,12 +269,12 @@ const Admin = () => {
 
   // Main UI
   return (
-    <div className="min-h-screen bg-white px-[5vw] py-16">
+    <div className="min-h-screen max-w-[1200px] w-full bg-white px-[5vw] py-16">
       <h1 className="text-primary font-bold text-4xl mb-12">Admin Dashboard</h1>
       <div className="flex gap-8 mb-8">
         <button onClick={() => setTab('store')} className={`px-6 py-3 font-semibold bg-primary text-white border-none ${tab === 'store' ? '' : 'opacity-60'}`}>Store</button>
         <button onClick={() => setTab('allMatches')} className={`px-6 py-3 font-semibold bg-primary text-white border-none ${tab === 'allMatches' ? '' : 'opacity-60'}`}>All Matches</button>
-        <button onClick={() => setTab('upcomingMatches')} className={`px-6 py-3 font-semibold bg-primary text-white border-none ${tab === 'upcomingMatches' ? '' : 'opacity-60'}`}>Upcoming Matches</button>
+
         <button onClick={() => setTab('transactions')} className={`px-6 py-3 font-semibold bg-primary text-white border-none ${tab === 'transactions' ? '' : 'opacity-60'}`}>Transactions</button>
         <button onClick={() => setTab('news')} className={`px-6 py-3 font-semibold bg-primary text-white border-none ${tab === 'news' ? '' : 'opacity-60'}`}>News</button>
       </div>
@@ -407,47 +407,7 @@ const Admin = () => {
         </div>
       )}
       {/* Upcoming Matches Tab */}
-      {tab === 'upcomingMatches' && (
-        <div>
-          <h2 className="text-primary font-bold text-4xl mb-6">Upcoming Matches</h2>
-          <div className="flex justify-end mb-6">
-            <button
-              onClick={() => { setShowMatchModal(true); setMatchType('upcoming'); }}
-              className="bg-primary text-white px-4 py-2 font-semibold border-none"
-            >
-              Add to Upcoming Matches
-            </button>
-          </div>
-          <table className="w-full border border-primary text-left">
-            <thead>
-              <tr className="border-b border-primary">
-                <th className="py-3 px-2">Opponent</th>
-                <th className="py-3 px-2">Logo</th>
-                <th className="py-3 px-2">Date</th>
-                <th className="py-3 px-2">Kickoff</th>
-                <th className="py-3 px-2">Competition</th>
-                <th className="py-3 px-2">Venue</th>
-                <th className="py-3 px-2">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {upcomingMatches.map((match: any) => (
-                <tr key={match.id} className="border-b border-primary">
-                  <td className="py-2 px-2">{match.opponent}</td>
-                  <td className="py-2 px-2">{match.image_url && <img src={match.image_url} alt="logo" className="w-8 h-8 object-cover" />}</td>
-                  <td className="py-2 px-2">{match.match_date}</td>
-                  <td className="py-2 px-2">{match.kickoff_time}</td>
-                  <td className="py-2 px-2">{match.competition}</td>
-                  <td className="py-2 px-2">{match.venue}</td>
-                  <td className="py-2 px-2">
-                    <button onClick={() => handleDeleteMatch(match.id, 'upcoming')} className="text-primary font-bold mr-2 border-none bg-white hover:text-red-600">Delete</button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+      
       {/* Transactions Tab */}
       {tab === 'transactions' && (
         <div>

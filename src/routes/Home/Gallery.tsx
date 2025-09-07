@@ -45,7 +45,7 @@ const Gallery = () => {
             </div>
             <div className="w-full h-[2px] mt-12 bg-zinc-300 mb-4"></div>
             <div className="text-sm font-medium text-primary flex justify-between w-full">
-              <div>PHOTO</div>
+              <div>GALLERY</div>
             </div>
           </div>
         ))}

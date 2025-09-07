@@ -1,8 +1,13 @@
-
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { supabase } from "../lib/supabase";
 import { useNavigate } from "react-router-dom";
+import Image from "../assets/images/shop.jpg";
+
+const images = [
+  "https://nnzxupmglfmjqwgypykh.supabase.co/storage/v1/object/public/images/jerseys/1753882886391-vdjsmz.png",
+  Image,
+];
 
 const Shop = () => {
   const [jerseys, setJerseys] = useState<any[]>([]);
@@ -25,24 +30,20 @@ const Shop = () => {
   useEffect(() => {
     if (jerseys.length === 0) return;
     const timer = setTimeout(() => {
-      setCurrentSlide((prev) => (prev + 1) % Math.min(jerseys.length, 3));
+      setCurrentSlide((prev) => (prev + 1) % Math.min(images.length, 2));
     }, 4000);
     return () => clearTimeout(timer);
-  }, [currentSlide, jerseys]);
+  }, [currentSlide, images]);
 
   return (
     <div className="h-fit px-4 max-w-[1200px] w-full py-12 flex flex-col">
       {/* Hero Slideshow Section - auto change, no overlay, no dots */}
       {jerseys.length > 0 && (
-        <div className="w-full h-[320px] md:h-[400px] relative mb-8 rounded-lg overflow-hidden">
+        <div className="w-full h-[320px] md:h-[400px] relative mb-8  overflow-hidden">
           <AnimatePresence mode="sync">
             <motion.img
-              key={jerseys[currentSlide].id}
-              src={
-                jerseys[currentSlide].image_urls && jerseys[currentSlide].image_urls.length > 0
-                  ? jerseys[currentSlide].image_urls[0]
-                  : jerseys[currentSlide].image_url
-              }
+              key={images[currentSlide] + "image"}
+              src={images[currentSlide]}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -51,6 +52,9 @@ const Shop = () => {
               alt={jerseys[currentSlide].name}
             />
           </AnimatePresence>
+          <div className="h-[250px] bg-gradient-to-b from-transparent to-black/60 absolute bottom-0 left-0 w-full text-white flex items-center p-12">
+            <div className="text-5xl font-bold" >SHOP NOW</div>
+          </div>
         </div>
       )}
       {/* Product Grid Section */}
@@ -82,11 +86,15 @@ const Shop = () => {
                 {jersey.name}
               </div>
               <div className="mt-2 text-sm mb-4">₹{jersey.price}</div>
-              <button className="bg-primary text-white flex items-center justify-center font-bold p-4 text-sm hover:bg-blue-800 mb-4" >VIEW PRODUCT </button>
+              <button className="bg-primary text-white flex items-center justify-center font-bold p-4 text-sm hover:bg-blue-800 mb-4">
+                VIEW PRODUCT{" "}
+              </button>
               <div className="text-sm font-medium text-primary flex justify-between w-full">
                 <div>PRODUCT</div>
                 <div className="text-zinc-600 font-bold">
-                  {jersey.created_at ? new Date(jersey.created_at).toLocaleDateString() : ""}
+                  {jersey.created_at
+                    ? new Date(jersey.created_at).toLocaleDateString()
+                    : ""}
                 </div>
               </div>
             </div>

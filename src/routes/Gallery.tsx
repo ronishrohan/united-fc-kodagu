@@ -88,7 +88,7 @@ const GALLERY = {
   team: teamImages,
 };
 
-const heights = [200, 250, 300, 350, 400];
+const heights = [300, 350, 400];
 
 const Gallery = () => {
       const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -155,12 +155,13 @@ const Gallery = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.2 }}
+              onClick={() => setSelectedImage(null)}
             >
-              <div className="relative max-w-6xl max-h-[90vh] w-full flex items-center justify-center">
+              <div className="relative h-[100vh] w-[100vw]  flex items-center justify-center">
                 <img
                   src={selectedImage}
                   alt="Selected"
-                  className="max-w-full max-h-full rounded-lg object-contain"
+                  className="size-full rounded-lg object-contain absolute"
                 />
                 <button
                   onClick={() => setSelectedImage(null)}
