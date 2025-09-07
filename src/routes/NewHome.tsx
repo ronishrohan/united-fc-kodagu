@@ -231,7 +231,7 @@ const NewHome = () => {
         <img src={PartnerLogo} alt="" />
       </div>
       {/* <StoreSection /> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

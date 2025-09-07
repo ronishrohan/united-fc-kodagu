@@ -26,6 +26,7 @@ import Videos from "./routes/Videos";
 import About from "./routes/Home/About";
 import Gallery from "./routes/Gallery";
 import PrivacyPolicy from "./routes/PrivacyPolicy";
+import Footer from "./routes/Home/Footer";
 
 function App() {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -108,6 +109,7 @@ function App() {
                   element={<AllMatchesPage />}
                 />
               </Routes>
+              <Footer />
               {/* <div className="section-background">
                 <Footer />
               </div> */}
